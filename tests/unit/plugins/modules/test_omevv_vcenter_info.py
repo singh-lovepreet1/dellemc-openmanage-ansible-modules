@@ -80,7 +80,7 @@ class TestOMEVVVCENTERINFO(FakeAnsibleModule):
 
         # Scenario 2: Retrieve single vcenter information
         ome_default_args.update({'vcenter_hostname': 'hostname1'})
-        mocker.patch(MODULE_PATH + GET_ALL_VCENTER_INFO_KEY, return_value=[sample_resp[0]])
+        mocker.patch(MODULE_PATH + GET_ALL_VCENTER_INFO_KEY, return_value=sample_resp[0])
         resp = self._run_module(ome_default_args)
         assert resp['msg'] == SUCCESS_MSG
         assert resp['changed'] is False
@@ -88,7 +88,7 @@ class TestOMEVVVCENTERINFO(FakeAnsibleModule):
         # Scenario 3: Retrieve not successfull vcenter information
         obj.json_data = [sample_resp[1]]
         ome_default_args.update({'vcenter_hostname': 'hostname1'})
-        mocker.patch(MODULE_PATH + GET_ALL_VCENTER_INFO_KEY, return_value=[])
+        mocker.patch(MODULE_PATH + GET_ALL_VCENTER_INFO_KEY, return_value={})
         resp = self._run_module(ome_default_args)
         assert resp['msg'] == "'hostname1' vCenter is not registered in OME."
         assert resp['changed'] is False

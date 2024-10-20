@@ -99,14 +99,14 @@ class TestOMEVVFirmwareRepositoryProfileInfo(FakeAnsibleModule):
 
         # Scenario 2: Retrieve single profile information
         omevv_default_args.update({'name': 'Dell Default Catalog'})
-        mocker.patch(MODULE_PATH + GET_PROFILE_INFO_KEY, return_value=[sample_resp[0]])
+        mocker.patch(MODULE_PATH + GET_PROFILE_INFO_KEY, return_value=sample_resp[0])
         resp = self._run_module(omevv_default_args)
         assert resp['msg'] == SUCCESS_MSG
         assert resp['changed'] is False
 
         # Scenario 3: Retrieve not successfull profile information
         omevv_default_args.update({'name': 'Invalid_profile'})
-        mocker.patch(MODULE_PATH + GET_PROFILE_INFO_KEY, return_value=[])
+        mocker.patch(MODULE_PATH + GET_PROFILE_INFO_KEY, return_value={})
         resp = self._run_module(omevv_default_args)
         assert resp['msg'] == "'Invalid_profile' firmware repository profile name does not exist in OMEVV."
         assert resp['changed'] is False

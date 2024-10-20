@@ -46,8 +46,10 @@ class OMEVVInfo:
         Returns:
             dict: The vCenter data that matches the given vcenter_id. If no match is found, an empty dictionary is returned.
         """
-        vcenter_info_spec = [vcenter for vcenter in vcenter_data if vcenter.get('consoleAddress') == vcenter_id]
-        return vcenter_info_spec
+        for vcenter in vcenter_data:
+            if vcenter.get('consoleAddress') == vcenter_id:
+                return vcenter
+        return {}
 
     def get_vcenter_info(self, vcenter_id=None):
         """
@@ -55,12 +57,13 @@ class OMEVVInfo:
         Parameters:
             vcenter_id (str, optional): The hostname of the vCenter. If provided, retrieves the information for the specified vCenter.
         Returns:
-            list: A list of vCenter information. If `vcenter_id` is provided, the list contains the information for the specified vCenter.
+            list: A list of vCenter information when `vcenter_id` is not provided
+            dict: A dict containing the information for the specified vCenter when `vcenter_id` is provided. If no match is found, the empty dict is returned.
         """
         resp = self.omevv_obj.invoke_request('GET', VCENTER_INFO_URI)
         vcenter_info = []
         if resp.success:
             vcenter_info = resp.json_data
-            if vcenter_id or vcenter_id != "":
+            if vcenter_id:
                 vcenter_info = self.search_vcenter_hostname(vcenter_info, vcenter_id)
         return vcenter_info

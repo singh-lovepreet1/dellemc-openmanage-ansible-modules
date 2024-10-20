@@ -154,7 +154,7 @@ class OMEVVVCenterInfo:
         self.omevv_utils_obj = OMEVVInfo(self.obj)
         resp = self.omevv_utils_obj.get_vcenter_info(vcenter_id)
         result = {'msg': SUCCESS_MSG, 'vcenter_info': resp}
-        if (vcenter_id or vcenter_id == "") and (not resp):
+        if vcenter_id and not resp:
             result['msg'] = NO_VCENTER_MSG.format(vcenter_hostname=vcenter_id)
         return result
 
