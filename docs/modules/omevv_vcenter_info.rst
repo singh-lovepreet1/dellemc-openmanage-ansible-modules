@@ -124,7 +124,7 @@ msg (always, str, Successfully retrieved the vCenter information.)
   Status of the vCenter information for the retrieve operation.
 
 
-vcenter_info (success, list, [{'uuid': '77373c7e-d2b0-453b-9567-102484519bd1', 'consoleAddress': 'vcenter_ip_or_hostname', 'description': 'vCenter 8.0', 'registeredExtensions': ['PHM', 'WEBCLIENT', 'PHA', 'VLCM']}, {'uuid': '77373c7e-d2b0-453b-9567-102484519bd2', 'consoleAddress': 'vcenter_ip_or_hostname', 'description': 'vCenter 8.1', 'registeredExtensions': ['PHM', 'WEBCLIENT', 'PHA', 'VLCM']}])
+vcenter_info (success, list, [{'uuid': '77373c7e-d2b0-453b-9888-102499919bd1', 'consoleAddress': 'vcenter_ip_or_hostname', 'description': 'vCenter 8.0', 'registeredExtensions': ['PHM', 'WEBCLIENT', 'PHA', 'VLCM']}, {'uuid': '77373c7e-d2b0-453b-9888-102499919bd2', 'consoleAddress': 'vcenter_ip_or_hostname', 'description': 'vCenter 8.1', 'registeredExtensions': ['PHM', 'WEBCLIENT', 'PHA', 'VLCM']}])
   Information on the vCenter.
 
 
