@@ -22,7 +22,7 @@
     - name: Verify task status - Negative - invalid profile name
       ansible.builtin.assert:
         that:
-          - not invalid_profile_name.failed
+          - invalid_profile_name.failed
           - not invalid_profile_name.changed
           - 'invalid_profile_name.msg == "Unable to delete the profile Invalid
             because the profile name is invalid. Enter a valid profile name
