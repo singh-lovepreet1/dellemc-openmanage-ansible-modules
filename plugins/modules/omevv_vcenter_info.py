@@ -73,7 +73,7 @@ vcenter_info:
   sample:
     [
         {
-            "uuid": "77373c7e-d2b0-453b-9567-102484519bd1",
+            "uuid": "77373c7e-d2b0-453b-9888-102499919bd1",
             "consoleAddress": vcenter_ip_or_hostname,
             "description": "vCenter 8.0",
             "registeredExtensions": [
@@ -84,7 +84,7 @@ vcenter_info:
             ]
         },
         {
-            "uuid": "77373c7e-d2b0-453b-9567-102484519bd2",
+            "uuid": "77373c7e-d2b0-453b-9888-102499919bd2",
             "consoleAddress": vcenter_ip_or_hostname,
             "description": "vCenter 8.1",
             "registeredExtensions": [
