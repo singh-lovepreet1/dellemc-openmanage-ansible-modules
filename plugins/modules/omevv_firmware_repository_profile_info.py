@@ -138,7 +138,7 @@ import json
 from ansible.module_utils.six.moves.urllib.error import URLError, HTTPError
 from ansible.module_utils.urls import ConnectionError, SSLValidationError
 from ansible_collections.dellemc.openmanage.plugins.module_utils.omevv import RestOMEVV, OMEVVAnsibleModule
-from ansible_collections.dellemc.openmanage.plugins.module_utils.omevv_firmware_utils import OMEVVFirmwareProfile
+from ansible_collections.dellemc.openmanage.plugins.module_utils.omevv_utils.omevv_firmware_utils import OMEVVFirmwareProfile
 
 SUCCESS_MSG = "Successfully retrieved the firmware repository profile information."
 NO_PROFILE_MSG = "'{profile_name}' firmware repository profile name does not exist in OMEVV."
